@@ -1,3 +1,44 @@
+@import "variables.scss";
+@import "loops.scss";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  padding-top: 50px;
+}
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 7 * ($block-size + 1px);
+  
+  div {
+    position: relative;
+    width: $block-size;
+    height: $block-size;
+    margin: 0 1px 1px 0;
+    background-color: #eee;
+    border: 1px solid black;
+
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    transition: 0.5s background-color, 0.5s translate;
+
+    &:before {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover {
+      background-color: pink;
+      transform: translateY(-20px);
+    }
+  }
 }
